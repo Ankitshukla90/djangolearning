@@ -8,23 +8,23 @@ def student_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        group = request.POST.get('group') # customer
+        group = request.POST.get('group') # student
         if username and password:
             user = authenticate(request, username=username, password=password)
             if user is None:
                 messages.error(request, 'Invalid credentials')
                 redirect('slogin')
             else:
-                # if user is a customer
+                # if user is a student
                 if user.groups.filter(name=group).exists():
                     login(request, user)
                     return redirect('home')
                 else:
-                    messages.error(request, 'You are not a customer')
+                    messages.error(request, 'You are not a student')
                     return redirect('slogin')
         else:
             messages.error(request, 'Please fill all fields')
-    return render(request, 'accounts/customer/login.html')
+    return render(request, 'accounts/student/login.html')
 
 def student_register(request):
     if request.method == "POST":
@@ -47,7 +47,7 @@ def student_register(request):
                 return redirect('slogin')
         else:
             messages.error(request, 'Passwords do not match')
-    return render(request, 'accounts/customer/register.html')
+    return render(request, 'accounts/student/register.html')
 
 def logout_view(request):
     logout(request)
