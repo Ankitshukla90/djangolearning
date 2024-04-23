@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django_ckeditor_5.fields import CKEditor5Field
 
 # Create your models here.
 
@@ -11,7 +12,7 @@ class Lesson(models.Model):
     ]
 
     title = models.CharField(max_length=255)
-    content = models.TextField()
+    content = CKEditor5Field('Text', config_name='extends')
     created_at = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     points = models.IntegerField()
@@ -46,21 +47,3 @@ class Quiz(models.Model):
 
     def __str__(self):
         return self.name
-    
-
-
-class LessonContent(models.Model):
-    CONTENT_TYPE_CHOICES = [
-        ('T', 'Text'),
-        ('V', 'Video'),
-        ('I', 'Image'),
-    ]
-
-    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
-    content_type = models.CharField(max_length=1, choices=CONTENT_TYPE_CHOICES)
-    order = models.IntegerField()
-    content = models.TextField()
-    image = models.ImageField(upload_to='courseapp/')
-
-    def __str__(self):
-        return f'{self.lesson.title} - {self.get_content_type_display()}'
