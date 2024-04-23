@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Lesson, Badge, Quiz, LessonContent
+from .models import Lesson, Badge, Quiz
 
 # Register your models here.
 admin.site.register(Lesson)
 admin.site.register(Badge)
 admin.site.register(Quiz)
-admin.site.register(LessonContent)
+
