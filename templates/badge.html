@@ -2,89 +2,90 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Badge Template</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* Custom CSS for the digital badge template */
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f8f9fa;
-    }
-    
-    .badge-card {
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-    
-    .badge-card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .badge-image {
-      width: 50%;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-    }
-    
-    .badge-details {
-      padding: 20px;
-    }
-    
-    .badge-title {
-      color: #333;
-      font-weight: bold;
-      font-size: 20px;
-    }
-    
-    .badge-description {
-      color: #666;
-      font-size: 16px;
-      margin-top: 10px;
-    }
-    
-    .badge-category {
-      background-color: #ffc107;
-      color: #343a40;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 14px;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      display: inline-block;
-    }
-    
-    .badge-earned {
-      background-color: #28a745;
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 14px;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      display: inline-block;
-    }
-    
-    .badge-requirements {
-      margin-top: 15px;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .badge-card {
-        margin-bottom: 20px;
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Badge Template</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      /* Custom CSS for the digital badge template */
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f8f9fa;
       }
-    }
-  </style>
-</head>
+      
+      .badge-card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      
+      .badge-card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .badge-image {
+        width: 50%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+      
+      .badge-details {
+        padding: 20px;
+      }
+      
+      .badge-title {
+        color: #333;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      
+      .badge-description {
+        color: #666;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      
+      .badge-category {
+        background-color: #ffc107;
+        color: #343a40;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+      
+      .badge-earned {
+        background-color: #28a745;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+      
+      .badge-requirements {
+        margin-top: 15px;
+      }
+  
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .badge-card {
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  
 <body>
-
+  
 <div class="container mt-4">
   <div class="row justify-content-center">
     <div class="col-md-6">
