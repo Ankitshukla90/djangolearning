@@ -69,9 +69,11 @@ def quizes(request):
     return render(request, 'quizes.html', {'quizzes': quizzes})
 
 @login_required
-def courses(request):
-    return render(request, 'courses.html')
+def course_details(request):
+    return render(request, 'course-details.html')
 
 @login_required
-def coursedetails(request):
-    return render(request, 'coursedetails.html')
+def index(request):
+    return render(request, 'index.html')
+
+
