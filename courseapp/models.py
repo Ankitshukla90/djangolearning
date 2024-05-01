@@ -18,9 +18,9 @@ class Lesson(models.Model):
     points = models.IntegerField()
     level = models.CharField(max_length=1, choices=LEVEL_CHOICES)
     image = models.ImageField(upload_to='courseapp/')
-
+    
     def __str__(self):
-        return self.name
+        return self.title
     
 
 class Badge(models.Model):
