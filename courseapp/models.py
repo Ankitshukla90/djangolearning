@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django_ckeditor_5.fields import CKEditor5Field
-
 # Create your models here.
 
 class Lesson(models.Model):
@@ -28,7 +27,6 @@ class Badge(models.Model):
     description = models.TextField()
     points = models.IntegerField()
     image = models.ImageField(upload_to='courseapp/')
-
     def __str__(self):
         return self.name
     
@@ -36,7 +34,7 @@ class Badge(models.Model):
     
 class Quiz(models.Model):
     name = models.CharField(max_length=200)
-    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='quizes')
     question = models.TextField()
     option1 = models.CharField(max_length=255)
     option2 = models.CharField(max_length=255)
