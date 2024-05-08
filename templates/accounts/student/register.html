@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -21,11 +22,36 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
         body {
-            background-image: url(/static/img/backgroundcover123.jpeg);
+            background-image: url(/static/img/backgroundcover321.jpg);
             background-size: cover;
             background-position: center;
             margin: 0;
             padding: 0;
+        }
+
+        .registration-container {
+            background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            padding: 30px; /* Added padding for space */
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+
+        .card-header {
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black background for contrast */
+            color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .icon {
+            font-size: 1.2rem; /* Adjust size as needed */
+            margin-right: 5px; /* Spacing between icon and text */
         }
     </style>
 </head>
@@ -38,39 +64,39 @@
         <div class="container">
             <div class="row justify-content-center align-items-center vh-100 ">
                 <div class="col-md-4 ">
-                    <div class="card">
+                    <div class="card registration-container">
+                        <div class="card-header">
+                            <i class="fas fa-graduation-cap icon"></i> Register for Free
+                        </div>
                         <div class="card-body">
-                            <h3>Register for Free</h3>
                             <form method="post">
                                 {% csrf_token %}
                                 <input type="hidden" name="group" value="student">
                                 <div class="mb-3">
-                                    <label for="username" class="form-label">Your Username</label>
+                                    <label for="username" class="form-label"><i class="fas fa-user icon"></i> Your Username</label>
                                     <input type="text" class="form-control" name="username" id="username"
                                         aria-describedby="helpId" placeholder="xyz" required />
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Your Email</label>
+                                    <label for="email" class="form-label"><i class="fas fa-envelope icon"></i> Your Email</label>
                                     <input type="email" class="form-control" name="email" id="email"
                                         aria-describedby="emailHelpId" placeholder="xyz@mail.com" required />
 
                                 </div>
                                 <div class="mb-3">
-                                    <label for="password1" class="form-label">Your Password</label>
+                                    <label for="password1" class="form-label"><i class="fas fa-lock icon"></i> Your Password</label>
                                     <input type="password" class="form-control" name="password1" id="password1"
                                         placeholder="Secret" required />
                                 </div>
                                 <div class="mb-3">
-                                    <label for="password2" class="form-label">Confirm Password</label>
+                                    <label for="password2" class="form-label"><i class="fas fa-lock icon"></i> Confirm Password</label>
                                     <input type="password" class="form-control" name="password2" id="password2"
                                         placeholder="Secret" required />
                                 </div>
                                 <div class="mb-3 d-flex justify-content-between align-items-center">
-                                    <button type="submit" class="btn btn-primary">Register</button>
-                                    <a href="{% url 'slogin' %}" class="nav-link">Already a student?</a>
+                                    <button type="submit" class="btn btn-primary"><i class="fas fa-user-plus icon"></i> Register</button>
+                                    <a href="{% url 'slogin' %}" class="nav-link"><i class="fas fa-sign-in-alt icon"></i> Already a student?</a>
                                 </div>
-
-
                             </form>
                         </div>
                     </div>
