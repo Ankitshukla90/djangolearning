@@ -94,13 +94,26 @@ body {
 .content {
   margin-left: 250px;
   padding: 20px;
-  position: relative; /* Needed for positioning the content over the background image */
-  z-index: 1; /* Ensure content appears above the background image */
-  background-color: rgba(255, 255, 255, 0.8); /* Background color with transparency */
 }
 
 .container {
   margin-top: 20px;
+  position: relative; /* Ensure z-index works correctly */
+  z-index: 0; /* Ensure content appears above the background image */
+}
+
+.container::before {
+  content: ""; /* Required for pseudo-elements */
+  position: absolute; /* Position the pseudo-element */
+  top: 0; /* Position from the top */
+  left: 0; /* Position from the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-image: url(/static/img/backgroundcover123.jpeg); /* Specify the path to your image */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the background image */
+  opacity: 0.2; /* Adjust the opacity of the background image */
+  z-index: -1; /* Place the pseudo-element behind the container content */
 }
 
 .card {
@@ -183,6 +196,7 @@ body {
     padding: 8px 15px;
   }
 }
+
   </style>
 </head>
 <body>
