@@ -10,7 +10,7 @@ class Badge(models.Model):
     points = models.IntegerField()
     image = models.ImageField(upload_to='courseapp/')
     def __str__(self):
-        return self.name
+        return self.image.url
     
 
 
